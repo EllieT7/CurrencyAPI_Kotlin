@@ -1,0 +1,56 @@
+2023-02-13 01:46:24,826 INFO org.springframework.boot.StartupInfoLogger [main] Starting CurrencyApiKotlinApplicationKt using Java 17.0.6 on DESKTOP-FJG0GSV with PID 14728 (D:\Documents\Universidad\Arquitectura de software\CurrencyApiKotlin\demo\demo\target\classes started by Nao in D:\Documents\Universidad\Arquitectura de software\CurrencyApiKotlin\demo\demo)
+2023-02-13 01:46:24,831 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-02-13 01:46:26,450 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2023-02-13 01:46:26,513 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-13 01:46:26,514 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-02-13 01:46:26,516 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-02-13 01:46:26,661 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-02-13 01:46:26,661 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1730 ms
+2023-02-13 01:46:27,869 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2023-02-13 01:46:27,909 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-13 01:46:27,924 INFO org.springframework.boot.StartupInfoLogger [main] Started CurrencyApiKotlinApplicationKt in 3.74 seconds (JVM running for 4.213)
+2023-02-13 01:46:50,935 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-13 01:46:50,938 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-02-13 01:46:50,941 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 2 ms
+2023-02-13 01:46:51,008 INFO arquitectura.software.demo.api.CurrencyApi [http-nio-8080-exec-1] Procesando solicitud de conversion de moneda: 1000 usd a bob
+2023-02-13 01:46:51,034 INFO arquitectura.software.demo.bl.CurrencyBl [http-nio-8080-exec-1] Convirtiendo 1000 usd a bob
+2023-02-13 01:46:53,507 INFO arquitectura.software.demo.bl.CurrencyBl [http-nio-8080-exec-1] Error al parsear la respuesta de la API
+2023-02-13 01:54:46,342 INFO org.springframework.boot.StartupInfoLogger [main] Starting CurrencyApiKotlinApplicationKt using Java 17.0.6 on DESKTOP-FJG0GSV with PID 9936 (D:\Documents\Universidad\Arquitectura de software\CurrencyApiKotlin\demo\demo\target\classes started by Nao in D:\Documents\Universidad\Arquitectura de software\CurrencyApiKotlin\demo\demo)
+2023-02-13 01:54:46,348 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-02-13 01:54:47,827 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2023-02-13 01:54:47,843 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-13 01:54:47,844 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-02-13 01:54:47,845 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-02-13 01:54:47,983 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-02-13 01:54:47,984 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1520 ms
+2023-02-13 01:54:49,161 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2023-02-13 01:54:49,199 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-13 01:54:49,213 INFO org.springframework.boot.StartupInfoLogger [main] Started CurrencyApiKotlinApplicationKt in 3.491 seconds (JVM running for 3.975)
+2023-02-13 01:54:57,310 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-13 01:54:57,311 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-02-13 01:54:57,312 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 1 ms
+2023-02-13 01:54:57,401 INFO arquitectura.software.demo.api.CurrencyApi [http-nio-8080-exec-1] Procesando solicitud de conversion de moneda: 1000 usd a bob
+2023-02-13 01:54:57,405 INFO arquitectura.software.demo.bl.CurrencyBl [http-nio-8080-exec-1] Convirtiendo 1000 usd a bob
+2023-02-13 01:54:58,671 INFO arquitectura.software.demo.bl.CurrencyBl [http-nio-8080-exec-1] Error al parsear la respuesta de la API
+2023-02-13 01:58:16,204 INFO org.springframework.boot.StartupInfoLogger [main] Starting CurrencyApiKotlinApplicationKt using Java 17.0.6 on DESKTOP-FJG0GSV with PID 8564 (D:\Documents\Universidad\Arquitectura de software\CurrencyApiKotlin\demo\demo\target\classes started by Nao in D:\Documents\Universidad\Arquitectura de software\CurrencyApiKotlin\demo\demo)
+2023-02-13 01:58:16,209 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-02-13 01:58:17,808 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat initialized with port(s): 8080 (http)
+2023-02-13 01:58:17,826 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing ProtocolHandler ["http-nio-8080"]
+2023-02-13 01:58:17,827 INFO org.apache.juli.logging.DirectJDKLog [main] Starting service [Tomcat]
+2023-02-13 01:58:17,830 INFO org.apache.juli.logging.DirectJDKLog [main] Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-02-13 01:58:17,984 INFO org.apache.juli.logging.DirectJDKLog [main] Initializing Spring embedded WebApplicationContext
+2023-02-13 01:58:17,986 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext [main] Root WebApplicationContext: initialization completed in 1682 ms
+2023-02-13 01:58:19,151 INFO org.apache.juli.logging.DirectJDKLog [main] Starting ProtocolHandler ["http-nio-8080"]
+2023-02-13 01:58:19,184 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer [main] Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-13 01:58:19,196 INFO org.springframework.boot.StartupInfoLogger [main] Started CurrencyApiKotlinApplicationKt in 3.586 seconds (JVM running for 4.037)
+2023-02-13 01:58:21,643 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8080-exec-1] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-13 01:58:21,645 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Initializing Servlet 'dispatcherServlet'
+2023-02-13 01:58:21,651 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8080-exec-1] Completed initialization in 3 ms
+2023-02-13 01:58:21,745 INFO arquitectura.software.demo.api.CurrencyApi [http-nio-8080-exec-1] Procesando solicitud de conversion de moneda: 1000 usd a bob
+2023-02-13 01:58:21,747 INFO arquitectura.software.demo.bl.CurrencyBl [http-nio-8080-exec-1] Convirtiendo 1000 usd a bob
+2023-02-13 01:58:22,925 INFO arquitectura.software.demo.bl.CurrencyBl [http-nio-8080-exec-1] Respuesta de la API: ResponseDto(success=true, query=QueryDto(from=USD, to=BOB, amount=1000), date=2023-02-13, result=6930.44)
+2023-02-13 01:58:30,226 INFO arquitectura.software.demo.api.CurrencyApi [http-nio-8080-exec-2] Procesando solicitud de conversion de moneda: 1000 bobs a usd
+2023-02-13 01:58:30,227 INFO arquitectura.software.demo.bl.CurrencyBl [http-nio-8080-exec-2] Convirtiendo 1000 bobs a usd
+2023-02-13 01:58:30,834 WARN arquitectura.software.demo.bl.CurrencyBl [http-nio-8080-exec-2] Error de la API: ErrorApiDto [code=invalid_from_currency, message=You have entered an invalid "from" property. [Example: from=EUR]]
+2023-02-13 01:58:34,256 INFO arquitectura.software.demo.api.CurrencyApi [http-nio-8080-exec-3] Procesando solicitud de conversion de moneda: -1000 bob a usd
+2023-02-13 01:58:34,257 WARN arquitectura.software.demo.bl.CurrencyBl [http-nio-8080-exec-3] No se puede convertir una cantidad menor a 0
