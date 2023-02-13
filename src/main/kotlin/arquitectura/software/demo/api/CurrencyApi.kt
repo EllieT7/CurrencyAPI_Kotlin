@@ -13,22 +13,23 @@ import java.util.logging.Logger
 
 @RestController
 @RequestMapping("/api/currency")
-class CurrencyApi    //Constructor CurrencyApi
-    (private val currencyBl: CurrencyBl) {
+
+class CurrencyApi (private val currencyBl: CurrencyBl) {
+
     /**
      * Endpoint GET para obtener la conversión de una moneda a otra
      */
     @GetMapping("/convert")
     fun convert(
-        @RequestParam from: String?,
-        @RequestParam to: String?,
-        @RequestParam amount: BigDecimal?
+        @RequestParam from: String,
+        @RequestParam to: String,
+        @RequestParam amount: BigDecimal
     ): ResponseDto {
-        val requestDto = RequestDto(from!!, to!!, amount!!)
+        val requestDto = RequestDto(from, to, amount)
         //Log procesando solicitud
         LOGGER.log(
             Level.INFO,
-            "Procesando solicitud de conversion de moneda: " + requestDto.amount + " " + requestDto.from + " a " + requestDto.to
+            "Procesando solicitud de conversion de moneda: ${requestDto.amount} ${requestDto.from}  a ${requestDto.to}"
         )
         return currencyBl.convert(requestDto)
     }

@@ -29,23 +29,24 @@ class CurrencyBl {
      * @return
      */
     fun convert(requestDto: RequestDto): ResponseDto {
-        if (requestDto.amount.compareTo(BigDecimal.ZERO) <= 0) {
+        //Verificamos que el monto sea mayor a 0
+        if (requestDto.amount < (BigDecimal.ZERO)) {
             LOGGER.log(Level.WARNING, "No se puede convertir una cantidad menor a 0")
             throw ServiceException("No se puede convertir una cantidad menor a 0", "bad_amount")
         }
-        LOGGER.info("Convirtiendo " + requestDto.amount + " " + requestDto.from + " a " + requestDto.to)
-        val response: Response =
-            invokeApi("https://api.apilayer.com/exchangerates_data/convert?to=" + requestDto.to + "&from=" + requestDto.from + "&amount=" + requestDto.amount)
-        return if (response.isSuccessful) {
+        LOGGER.info("Convirtiendo ${requestDto.amount} ${requestDto.from} a ${requestDto.to}")
+        val response: Response = invokeApi("https://api.apilayer.com/exchangerates_data/convert?to=${requestDto.to}&from=${requestDto.from}&amount=${requestDto.amount}")
+
+        if (response.isSuccessful) {
             //Obtenemos la respuesta exitosa
             val responseDto: ResponseDto = parseResponse(response)
             LOGGER.info("Respuesta de la API: $responseDto")
-            responseDto
+            return responseDto
         } else {
             //Obtenemos el error
             val errorServiceDto: ErrorServiceDto = parseError(response)
-            LOGGER.log(Level.WARNING, "Error de la API: " + errorServiceDto.error)
-            throw ServiceException(errorServiceDto.error?.message, errorServiceDto.error?.code)
+            LOGGER.log(Level.WARNING, "Error de la API: ${errorServiceDto.error}")
+            throw ServiceException(errorServiceDto.error.message, errorServiceDto.error.code)
         }
     }
 
@@ -62,8 +63,8 @@ class CurrencyBl {
             .addHeader("apikey", apiKey)
             .method("GET", null)
             .build()
-        return try {
-            client.newCall(request).execute()
+        try {
+            return client.newCall(request).execute()
         } catch (e: Exception) {
             e.printStackTrace()
             LOGGER.log(Level.WARNING, "Error al invocar la API")
@@ -78,8 +79,8 @@ class CurrencyBl {
      */
     private fun parseResponse(response: Response): ResponseDto {
         val mapper = jacksonObjectMapper()
-        return try {
-            mapper.readValue(response.body?.string(), ResponseDto::class.java)
+        try {
+            return mapper.readValue(response.body?.string(), ResponseDto::class.java)
         } catch (e: Exception) {
             e.printStackTrace()
             LOGGER.info("Error al parsear la respuesta de la API")
@@ -94,8 +95,8 @@ class CurrencyBl {
      */
     private fun parseError(response: Response): ErrorServiceDto {
         val mapper = jacksonObjectMapper()
-        return try {
-            mapper.readValue(response.body?.string(), ErrorServiceDto::class.java)
+        try {
+            return mapper.readValue(response.body?.string(), ErrorServiceDto::class.java)
         } catch (e: Exception) {
             e.printStackTrace()
             LOGGER.info("Error al parsear el error de la API")
