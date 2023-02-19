@@ -1,22 +1,27 @@
 package arquitectura.software.demo.bl
 
+import arquitectura.software.demo.dao.Currency
 import arquitectura.software.demo.dto.ErrorServiceDto
 import arquitectura.software.demo.dto.RequestDto
 import arquitectura.software.demo.dto.ResponseDto
+import arquitectura.software.demo.dao.repository.CurrencyRepository
 import arquitectura.software.demo.exception.ServiceException
 import com.fasterxml.jackson.module.kotlin.jacksonObjectMapper
 
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import okhttp3.Response
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.stereotype.Service
 import java.math.BigDecimal
+import java.util.Date
 import java.util.logging.Level
 import java.util.logging.Logger
 
+//Autowired para la bd
 @Service
-class CurrencyBl {
+class CurrencyBl @Autowired constructor(private val currencyRepository: CurrencyRepository) {
     var LOGGER = Logger.getLogger(CurrencyBl::class.java.name)
 
     //Declaramos la api key
@@ -41,6 +46,9 @@ class CurrencyBl {
             //Obtenemos la respuesta exitosa
             val responseDto: ResponseDto = parseResponse(response)
             LOGGER.info("Respuesta de la API: $responseDto")
+            //Si es exitoso guardo en bd
+            currencyRepository.save(Currency(requestDto.from, requestDto.to, requestDto.amount, responseDto.result, Date()))
+            
             return responseDto
         } else {
             //Obtenemos el error
