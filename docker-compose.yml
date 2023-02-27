@@ -11,7 +11,10 @@ services:
       POSTGRES_PASSWORD: password
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
-      - C:/Users/Nao/Desktop/postgres-arqui-2:/var/lib/postgresql/data
+      #windows
+      # - C:/Users/Nao/Desktop/postgres-arqui-2:/var/lib/postgresql/data
+      #linux
+      - /nao/Desktop/postgres-arqui-2:/var/lib/postgresql/data
   #mi hostname 
   currency-converter: 
     image: spring-boot-docker:spring-docker
@@ -22,7 +25,7 @@ services:
     environment:
       URL: "${POSTGRES_URL}"
       API_KEY: "${API_KEY}"
-      USERNAME: "${USERNAME}"
+      USERNAME_DB: "${USERNAME_DB}"
       PASSWORD: "${PASSWORD}"
     depends_on:
       - postgres

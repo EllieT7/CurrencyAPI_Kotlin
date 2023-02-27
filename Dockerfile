@@ -1,7 +1,7 @@
 FROM eclipse-temurin:17
 COPY target/*.jar app.jar
 
-ENV USERNAME "postgres"   
+ENV USERNAME_DB "postgres"   
 ENV PASSWORD "password"
 ENV URL "jdbc:postgresql://localhost:5432/arqui"
 
