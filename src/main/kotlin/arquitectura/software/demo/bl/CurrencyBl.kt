@@ -27,6 +27,9 @@ class CurrencyBl @Autowired constructor(private val currencyRepository: Currency
     //Declaramos la api key
     @Value("\${api.key}")
     private val apiKey: String = ""
+    //Declaramos la url de la api
+    @Value("\${api.url}")
+    private val apiUrl: String = ""
 
     /**
      * Método que convierte una moneda a otra
@@ -40,7 +43,7 @@ class CurrencyBl @Autowired constructor(private val currencyRepository: Currency
             throw ServiceException("No se puede convertir una cantidad menor a 0", "bad_amount")
         }
         LOGGER.info("Convirtiendo ${requestDto.amount} ${requestDto.from} a ${requestDto.to}")
-        val response: Response = invokeApi("https://api.apilayer.com/exchangerates_data/convert?to=${requestDto.to}&from=${requestDto.from}&amount=${requestDto.amount}")
+        val response: Response = invokeApi("${apiUrl}?to=${requestDto.to}&from=${requestDto.from}&amount=${requestDto.amount}")
 
         if (response.isSuccessful) {
             //Obtenemos la respuesta exitosa
@@ -48,7 +51,7 @@ class CurrencyBl @Autowired constructor(private val currencyRepository: Currency
             LOGGER.info("Respuesta de la API: $responseDto")
             //Si es exitoso guardo en bd
             currencyRepository.save(Currency(requestDto.from, requestDto.to, requestDto.amount, responseDto.result, Date()))
-            
+            LOGGER.info("Respuesta guardada en bd correctamente")
             return responseDto
         } else {
             //Obtenemos el error
