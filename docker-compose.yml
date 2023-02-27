@@ -1,7 +1,7 @@
 #Se crea el contenedor
 version: "2.4"
 services:
-  #base de datos
+  #Base de datos
   postgres:
     image: postgres:15
     mem_limit: 1024m
@@ -12,10 +12,11 @@ services:
     volumes:
       - ./init.sql:/docker-entrypoint-initdb.d/init.sql
       #windows
-      # - C:/Users/Nao/Desktop/postgres-arqui-2:/var/lib/postgresql/data
-      #linux
-      - /nao/Desktop/postgres-arqui-2:/var/lib/postgresql/data
-  #mi hostname 
+      #- C:/Users/Nao/Desktop/postgres-arqui-2:/var/lib/postgresql/data
+      #Linux
+      #- /nao/Desktop/postgres-arqui-2:/var/lib/postgresql/data
+      - ${VOLUME_PATH}
+  #Mi hostname
   currency-converter: 
     image: spring-boot-docker:spring-docker
     #Reinicio hasta que postgres funcione
