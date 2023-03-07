@@ -6,6 +6,8 @@ GET http://localhost:8080/api/currency/convert?to=eur&from=bob&amount=100
 ###
 ##Prueba con error de moneda
 
+
+
 GET http://localhost:8080/api/currency/convert?to=usd&from=bobs&amount=1000
 
 ###
