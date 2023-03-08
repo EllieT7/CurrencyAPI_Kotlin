@@ -31,9 +31,9 @@ services:
     depends_on:
       - postgres
   # Para angular
-  angular:
-    image: angular-software:2.0.0
-    ports:
-      - "4200:80"
-    volumes:
-      - /nginx.conf:/etc/nginx/nginx.conf
+  # angular:
+  #   image: angular-software:2.0.0
+  #   ports:
+  #     - "4200:80"
+  #   volumes:
+  #     - /nginx.conf:/etc/nginx/nginx.conf

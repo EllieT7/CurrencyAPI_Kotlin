@@ -406,3 +406,16 @@ Caused by: org.hibernate.HibernateException: Access to DialectResolutionInfo can
 2023-03-06 17:18:55,154 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2023-03-06 17:18:57,101 INFO org.springframework.boot.StartupInfoLogger [main] Started CurrencyApiKotlinApplicationTests in 9.942 seconds (JVM running for 12.358)
 2023-03-06 17:18:57,986 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-03-07 19:58:02,204 INFO org.springframework.boot.StartupInfoLogger [main] Starting CurrencyApiKotlinApplicationTests using Java 17.0.6 on DESKTOP-B6VGA76 with PID 9744 (started by Nao in D:\Documents\Proyectos\CurrencyAPI_Kotlin)
+2023-03-07 19:58:02,207 INFO org.springframework.boot.SpringApplication [main] No active profile set, falling back to 1 default profile: "default"
+2023-03-07 19:58:03,675 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-03-07 19:58:03,803 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate [main] Finished Spring Data repository scanning in 107 ms. Found 1 JPA repository interfaces.
+2023-03-07 19:58:05,013 INFO org.hibernate.jpa.internal.util.LogHelper [main] HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-03-07 19:58:05,211 INFO org.hibernate.Version [main] HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-03-07 19:58:05,748 INFO org.hibernate.annotations.common.reflection.java.JavaReflectionManager [main] HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-03-07 19:58:06,491 INFO org.hibernate.dialect.Dialect [main] HHH000400: Using dialect: org.hibernate.dialect.PostgreSQL10Dialect
+2023-03-07 19:58:07,333 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator [main] HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-03-07 19:58:07,348 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [main] Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-03-07 19:58:08,490 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration [main] spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-03-07 19:58:10,315 INFO org.springframework.boot.StartupInfoLogger [main] Started CurrencyApiKotlinApplicationTests in 8.956 seconds (JVM running for 10.847)
+2023-03-07 19:58:11,022 INFO org.springframework.orm.jpa.AbstractEntityManagerFactoryBean [SpringApplicationShutdownHook] Closing JPA EntityManagerFactory for persistence unit 'default'
