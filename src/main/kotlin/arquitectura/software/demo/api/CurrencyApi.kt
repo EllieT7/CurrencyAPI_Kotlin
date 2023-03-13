@@ -46,7 +46,7 @@ class CurrencyApi (private val currencyBl: CurrencyBl) {
         @RequestParam(required = false) from: String?,
         @RequestParam(required = false) to: String?,
         @RequestParam(required = false) amount: BigDecimal?,
-        @RequestParam(required = false) date: Date? ): List<Currency> {
+        @RequestParam(required = false) date: String? ): List<Currency> {
         //Log procesando solicitud
         LOGGER.log(Level.INFO, "Procesando solicitud de historial de conversiones")
         // Si se envian parametros de busqueda, se filtran los resultados

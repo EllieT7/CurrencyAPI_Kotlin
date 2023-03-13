@@ -22,6 +22,7 @@ import java.math.BigDecimal
 import java.util.Date
 import java.util.logging.Level
 import java.util.logging.Logger
+import java.util.Calendar
 import java.text.SimpleDateFormat
 
 //Autowired para la bd
@@ -126,7 +127,7 @@ class CurrencyBl @Autowired constructor(private val currencyRepository: Currency
      */
     fun history(page: Int, size: Int, filter: MutableMap<String, Any>): List<Currency> {
         LOGGER.info("Obteniendo historial de conversiones: page=$page, size=$size, filter=$filter")
-        val pageable: Pageable = PageRequest.of(page-1, size, Sort.by("date").descending());
+        val pageable: Pageable = PageRequest.of(page, size, Sort.by("date").descending());
         val list: List<Currency>;
         // return pagingRepository.findAll(pageable).toList()    
         // return pagingRepository.findByCurrencyFrom("bob", pageable).toList();
@@ -143,16 +144,21 @@ class CurrencyBl @Autowired constructor(private val currencyRepository: Currency
             // Se obtiene el nombre del filtro
             val name: String = firstFilter.key
             // Clasificacion de keys
+            var aux: Date = Date();
+            var cal: Calendar = Calendar.getInstance();
+            if(name == "date"){
+
+                aux = SimpleDateFormat("yyyy-MM-dd").parse(value.toString())
+                cal.time = aux
+            }
             when (name) {
                 "from" -> list = pagingRepository.findByCurrencyFrom(value.toString(), pageable).toList()
                 "to" -> list = pagingRepository.findByCurrencyTo(value.toString(), pageable).toList()
                 "amount" -> list = pagingRepository.findByAmount(value.toString().toBigDecimal(), pageable).toList()
-                "date" -> list = pagingRepository.findByDate(SimpleDateFormat("yyyy-MM-dd").parse(value.toString()), pageable).toList()
+                "date" -> list = pagingRepository.findByDate(cal.get(Calendar.YEAR),cal.get(Calendar.MONTH)+1,cal.get(Calendar.DAY_OF_MONTH), pageable).toList()
                 else -> list = pagingRepository.findAll(pageable).toList()
             }
         }
-
-
         return list;
     }
 }
